@@ -1,0 +1,16 @@
+
+
+<div class="row">
+    
+    <div *ngIf="nombre" class=" col-lg-3 col-sm-12 col-md-11">
+        <h4 class="text-center">¡Historial</h4>
+        <div class="card text-center" *ngFor="let histo of _usuario.historialList">
+            <div class="card-block">
+                <h5 class="card-title">{{histo.descripcion}}</h5>
+            </div>
+            <div class="card-footer text-muted">
+              <small>{{ (histo.dias > 0)? "Dentro de "+histo.dias : "Hace "+(histo.dias* -1)}} dias ({{histo.fechaFormat}} - {{histo.horaFormat}})</small>
+            </div>
+        </div>
+    </div>
+</div>

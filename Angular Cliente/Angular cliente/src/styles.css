@@ -1,0 +1,61 @@
+/* You can add global styles to this file, and also import other style files */
+.item-box{
+    border-radius: 4px;
+    background: #E7E7DE;
+    margin: 10px 2px;
+    padding: 5px 8px;
+}
+
+.item-box:hover{
+    box-shadow: -4px -7px 70px 28px rgba(0,0,0,0.25);
+    border-bottom: solid 2px #3c3c3c;
+    transition: 0.5s
+}
+
+.item-box h1{
+   color: #0F3057;
+}
+
+.item-box h2{
+   color: #0F3057;
+}
+
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #1ABC9C;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #2e2e2e;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
