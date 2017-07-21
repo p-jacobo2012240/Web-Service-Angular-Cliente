@@ -1,19 +1,12 @@
 <div class="row">
-<div class="col-lg-4 col-sm-11 col-md-6" style="margin-top: 10%; margin-bottom: 10%; border-right: solid 1.5px #000;">
-    <h1 class="text-center">Bienvenido</h1>
-    <p class="text-center">Ingrese con tu cuenta</p>
-    <img src="https://cdn4.iconfinder.com/data/icons/user-avatar-flat-icons/512/User_Avatar-44-512.png" style="width: 60%; margin: 3% 20%;" />
-        <div class="alert {{estado.type}}" *ngIf="estado.show" role="alert">
-            <strong>{{estado.title}}</strong> {{estado.mensaje}}.
-        </div>
-</div>
+
 <div class="col-lg-4 offset-lg-2 col-sm-11 col-md-6" style="margin-top: 10%; margin-bottom: 10%;">
     <form #d="ngForm" (ngSubmit)="autenticar(d)">
             <h4 class="text-center">Usuario</h4>
             <input type="text" placeholder="Usuario" ngModel  name="USAU" class="form-control" style="margin: 7px 2px" required/>
             <h4 class="text-center">Contraseña</h4>
             <input type="password" placeholder="Contraseña" class="form-control" ngModel name="PSAU"  required/>
-            
+
             <button type="submit" class="btn btn-primary btn-lg" name="usuario" style="margin: 10px 37%">Ingresar</button>
     </form>
 </div>

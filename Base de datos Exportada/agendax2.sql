@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
--- http://www.phpmyadmin.net
+-- version 4.6.5.2
+-- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 19-07-2017 a las 19:06:30
--- Versión del servidor: 10.1.19-MariaDB
--- Versión de PHP: 5.6.28
+-- Tiempo de generación: 21-07-2017 a las 05:42:07
+-- Versión del servidor: 10.1.21-MariaDB
+-- Versión de PHP: 5.6.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `agenda`
+-- Base de datos: `agendax2`
 --
 
 DELIMITER $$
@@ -63,9 +63,14 @@ CREATE TABLE `categoria` (
 --
 
 INSERT INTO `categoria` (`idCategoria`, `nombre`, `idUsuario`) VALUES
-(1, 'Familia Externa', 1),
-(2, 'Amigos 987', 1),
-(3, 'Iglesia uwu ', 1);
+(1, 'Familia ', 1),
+(2, 'Amigos ', 1),
+(4, 'TrabajoO', 1),
+(5, 'xd', 3),
+(6, 'amigos', 3),
+(7, 'programadores', 2),
+(8, 'Moteros', 4),
+(9, 'Rockeros', 4);
 
 --
 -- Disparadores `categoria`
@@ -106,13 +111,6 @@ CREATE TABLE `cita` (
   `idUsuario` int(11) NOT NULL,
   `fecha` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `cita`
---
-
-INSERT INTO `cita` (`idCita`, `lugar`, `descripcion`, `idContacto`, `idUsuario`, `fecha`) VALUES
-(3, 'Ciudad de Guatemala', 'Lorem ipsum', 1, 1, '2017-06-16 00:00:00');
 
 --
 -- Disparadores `cita`
@@ -171,7 +169,9 @@ INSERT INTO `contacto` (`idContacto`, `nombre`, `apellido`, `telefono`, `correo`
 (12, 'Pablo', 'Ramirez', '2034092349', 'nosequeonda', 2, ''),
 (13, 'Nanesq', 'oiwero', '2342', 'eioerp', 2, ''),
 (15, 'Mi', 'amor Eli uwu', '924292', 'nose uwu', 1, ''),
-(17, 'Corina', 'Odalis', '9876546', 'adfs@ioer.com', 2, '');
+(17, 'Corina', 'Odalis', '9876546', 'adfs@ioer.com', 2, ''),
+(18, 'mama', 'sanchez', '2334567', 'mama@mai.com', 1, ''),
+(19, 'sam', 'jacobo', '21333', 'sam@mail.com', 6, '');
 
 --
 -- Disparadores `contacto`
@@ -214,7 +214,9 @@ INSERT INTO `detalleusuario` (`idDetalleUsuario`, `idUsuario`, `idContacto`) VAL
 (10, 1, 12),
 (11, 1, 13),
 (13, 1, 15),
-(14, 1, 17);
+(14, 1, 17),
+(15, 1, 18),
+(16, 3, 19);
 
 --
 -- Disparadores `detalleusuario`
@@ -256,12 +258,28 @@ CREATE TABLE `historialagenda` (
 --
 
 INSERT INTO `historialagenda` (`idHistorial`, `fecha`, `descripcion`, `idUsuario`) VALUES
-(1, '2017-07-19 08:54:27', 'Se agrego la categoria Iglesia uwu ', 1),
-(2, '2017-07-19 09:42:59', 'Se agreago el contacto Corina', 1),
-(3, '2017-07-19 09:52:30', 'Se edito el usuario tonioros', 1),
-(4, '2017-07-19 09:53:09', 'Se edito el usuario tonioros', 1),
-(7, '2017-07-19 10:55:16', 'Se registro el usuario roserose', 4),
-(8, '2017-07-19 10:55:41', 'Se registro el usuario roseeliza', 5);
+(9, '2017-07-20 01:07:40', 'Se edito el usuario pablo', 1),
+(10, '2017-07-20 19:22:45', 'Se edito el usuario pablo', 1),
+(11, '2017-07-20 19:45:17', 'Se edito el usuario fernando', 2),
+(12, '2017-07-20 19:46:01', 'Se edito el usuario fernando', 2),
+(13, '2017-07-20 19:50:53', 'Se agreago el contacto mama', 1),
+(20, '2017-07-20 19:52:28', 'Se agrego la categoria Trabajo', 1),
+(22, '2017-07-20 19:53:23', 'Se edito la categoria TrabajoO', 1),
+(31, '2017-07-20 20:12:49', 'Se edito el usuario kevin', 3),
+(32, '2017-07-20 20:13:40', 'Se edito el usuario kevin', 3),
+(33, '2017-07-20 20:14:35', 'Se edito el usuario david', 4),
+(34, '2017-07-20 20:16:04', 'Se edito el usuario Dev', 5),
+(35, '2017-07-20 21:06:28', 'Se agrego la categoria xd', 3),
+(36, '2017-07-20 21:06:42', 'Se agrego la categoria amigos', 3),
+(37, '2017-07-20 21:07:37', 'Se agreago el contacto sam', 3),
+(41, '2017-07-20 21:13:16', 'Se edito la categoria Familia ', 1),
+(42, '2017-07-20 21:13:33', 'Se edito la categoria Amigos ', 1),
+(43, '2017-07-20 21:17:27', 'Se agrego la categoria programadores', 2),
+(44, '2017-07-20 21:21:02', 'Se edito el usuario david', 4),
+(45, '2017-07-20 21:23:01', 'Se agrego la categoria Moteros', 4),
+(46, '2017-07-20 21:23:15', 'Se agrego la categoria Rockeros', 4),
+(47, '2017-07-20 21:32:41', 'Se agrego la tarea Agenda IN6AM', 4),
+(48, '2017-07-20 21:40:44', 'Se elimino la cita Lorem ipsum', 1);
 
 -- --------------------------------------------------------
 
@@ -280,7 +298,8 @@ CREATE TABLE `prioridad` (
 
 INSERT INTO `prioridad` (`idPrioridad`, `nombre`) VALUES
 (1, 'Alta'),
-(2, 'Medio');
+(2, 'Media'),
+(3, 'Baja');
 
 -- --------------------------------------------------------
 
@@ -303,7 +322,8 @@ CREATE TABLE `tarea` (
 --
 
 INSERT INTO `tarea` (`idTarea`, `nombre`, `descripcion`, `idCategoria`, `idPrioridad`, `idUsuario`, `fecha`) VALUES
-(1, 'TArea de prueba', '234234234234234', 2, 1, 1, '2017-07-18 00:00:00');
+(1, 'TArea de prueba', '234234234234234', 2, 1, 1, '2017-07-18 00:00:00'),
+(2, 'Agenda IN6AM', 'es una agende de  con cuentas', 9, 1, 4, '2017-07-04 00:00:00');
 
 --
 -- Disparadores `tarea`
@@ -348,11 +368,11 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`idUsuario`, `nick`, `contrasena`, `filePath`) VALUES
-(1, 'tonioros', 'hola12', 'http://localhost:3000/images/19748691_1340358892727575_845090792768134019_n.jpg'),
-(2, 'monicaXR', '2134', 'https://image.flaticon.com/icons/svg/201/201818.svg'),
-(3, 'jaxocoys', '12345', 'https://image.flaticon.com/icons/svg/201/201818.svg'),
-(4, 'roserose', '123', 'https://image.flaticon.com/icons/svg/201/201818.svg'),
-(5, 'roseeliza', '123', 'https://image.flaticon.com/icons/svg/201/201818.svg');
+(1, 'pablo', '1234', 'http://localhost:3000/images/20160213_141421.jpg'),
+(2, 'fernando', 'wicho', 'http://localhost:3000/images/wicho.jpg'),
+(3, 'kevin', 'absd', 'http://localhost:3000/images/kevin.jpg'),
+(4, 'david', 'galindo', 'http://localhost:3000/images/apticok.jpg'),
+(5, 'Dev', 'dev', 'http://localhost:3000/images/shed-light-luca-debonaire-club-mix_large.jpg');
 
 --
 -- Disparadores `usuario`
@@ -442,7 +462,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `categoria`
 --
 ALTER TABLE `categoria`
-  MODIFY `idCategoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `idCategoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT de la tabla `cita`
 --
@@ -452,27 +472,27 @@ ALTER TABLE `cita`
 -- AUTO_INCREMENT de la tabla `contacto`
 --
 ALTER TABLE `contacto`
-  MODIFY `idContacto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `idContacto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 --
 -- AUTO_INCREMENT de la tabla `detalleusuario`
 --
 ALTER TABLE `detalleusuario`
-  MODIFY `idDetalleUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `idDetalleUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 --
 -- AUTO_INCREMENT de la tabla `historialagenda`
 --
 ALTER TABLE `historialagenda`
-  MODIFY `idHistorial` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `idHistorial` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 --
 -- AUTO_INCREMENT de la tabla `prioridad`
 --
 ALTER TABLE `prioridad`
-  MODIFY `idPrioridad` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idPrioridad` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT de la tabla `tarea`
 --
 ALTER TABLE `tarea`
-  MODIFY `idTarea` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idTarea` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --

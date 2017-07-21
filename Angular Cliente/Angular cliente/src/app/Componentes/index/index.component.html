@@ -1,7 +1,68 @@
+<div class="jumbotron card card-inverse " style="background-color: #333;">
+    <div class="row">
+        <div class="col-8 col-lg-10 ">
+            <div class="card-block" *ngIf="nombre">
+                <h1 class="card-title">Hola {{nombre}}</h1>
+                <h5 class="card-text">¡Opciones!</h5>
+                <a class="btn btn-primary" [routerLink]="['contactos']" >contactos</a>
+                <a class="btn btn-primary" [routerLink]="['categorias']" >Categorias</a>
+                <a class="btn btn-primary" [routerLink]="['tareas']" >Tareas</a>
+                <a class="btn btn-primary" [routerLink]="['salir']" >Cerrar sesion</a>
+            </div>
+            <div class="card-block" *ngIf="!nombre">
+                <h1 class="card-title">Bienvenido: </h1>
+                <h5 class="card-text">Porfavor Inicie Sesion</h5>
+                <a class="btn btn-primary" [routerLink]="['autenticar']" >Login</a>
+                <h2>Lista de Usuarios</h2>
+                  <hr>
+                    <table class="table">
+                        <thead class="thead-inverse">
+                          <tr>
+                            <th>#</th>
+                            <th>Nick</th>
+                            <th>Contraseña</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>1</td>
+                            <td>pablo</td>
+                            <td>1234</td>
+                          </tr>
+                          <tr>
+                            <td>2</td>
+                            <td>fernando</td>
+                            <td>wicho</td>
+                          </tr>
+                          <tr>
+                            <td>3</td>
+                            <td>kevin</td>
+                            <td>absd</td>
+                          </tr>
+                          <tr>
+                            <td>4</td>
+                            <td>david</td>
+                            <td>galindo</td>
+                          </tr>
+                          <tr>
+                            <td>5</td>
+                            <td>Dev</td>
+                            <td>dev</td>
+                          </tr>
+                        </tbody>
+                      </table>
+
+            </div>
+        </div>
+        <div class="col-4 col-lg-2 ">
+            <img src="{{imgSRC}}" width="95%" style="border-radius: 4px;" />
+        </div>
+    </div>
+</div>
 
 
 <div class="row">
-    
+
     <div *ngIf="nombre" class=" col-lg-3 col-sm-12 col-md-11">
         <h4 class="text-center">¡Historial</h4>
         <div class="card text-center" *ngFor="let histo of _usuario.historialList">
