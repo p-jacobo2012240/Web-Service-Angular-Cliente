@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 21-07-2017 a las 05:42:07
+-- Tiempo de generación: 21-07-2017 a las 07:35:32
 -- Versión del servidor: 10.1.21-MariaDB
 -- Versión de PHP: 5.6.30
 
@@ -278,8 +278,7 @@ INSERT INTO `historialagenda` (`idHistorial`, `fecha`, `descripcion`, `idUsuario
 (44, '2017-07-20 21:21:02', 'Se edito el usuario david', 4),
 (45, '2017-07-20 21:23:01', 'Se agrego la categoria Moteros', 4),
 (46, '2017-07-20 21:23:15', 'Se agrego la categoria Rockeros', 4),
-(47, '2017-07-20 21:32:41', 'Se agrego la tarea Agenda IN6AM', 4),
-(48, '2017-07-20 21:40:44', 'Se elimino la cita Lorem ipsum', 1);
+(47, '2017-07-20 21:32:41', 'Se agrego la tarea Agenda IN6AM', 4);
 
 -- --------------------------------------------------------
 
